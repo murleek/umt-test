@@ -15,8 +15,6 @@
     padding: 4px 2px;
     border-collapse: collapse;
     background: #1C1C1E;
-    table-layout: fixed;
-    z-index: -1;
 }
 .tableOuterWrapper .table tbody tr.loading {
     width: 100%;

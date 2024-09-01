@@ -17,20 +17,24 @@ export default function SearchInput({
 
   return (
     <div className={styles.searchInputWrap}>
-      <span
-        className={"material-symbols-rounded " + styles.searchIconPlaceholder}
-      >
-        search
-      </span>
+      {!text && (
+        <span
+          className={"material-symbols-rounded " + styles.searchIconPlaceholder}
+        >
+          search
+        </span>
+      )}
       <input
         className={styles.searchInput}
         placeholder={name}
         value={text}
         onChange={onChangeMiddleware}
       />
-      <button className={styles.clearText} onClick={() => setText("")}>
-        <span className="material-symbols-rounded">close</span>
-      </button>
+      {text && (
+        <button className={styles.clearText} onClick={() => setText("")}>
+          <span className="material-symbols-rounded">close</span>
+        </button>
+      )}
     </div>
   );
 }

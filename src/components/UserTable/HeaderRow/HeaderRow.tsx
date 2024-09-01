@@ -2,7 +2,7 @@ import styles from "./HeaderRow.module.css";
 export default function HeaderRow() {
   return (
     <tr className={styles.row}>
-      <th>
+      <th className={styles.name}>
         <span>Name</span>
       </th>
       <th>

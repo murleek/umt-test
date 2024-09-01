@@ -11,8 +11,12 @@
     font-weight: 400;
     font-size: 16px;
     width: 100%;
-    transition: .1s ease-in;
-    padding: 16px 8px 16px 32px;
+    transition: .1s ease-in box-shadow;
+    padding: 16px 8px 16px 40px;
+}
+.searchInput:not([value=""]) {
+    padding-left: 8px;
+    padding-right: 40px;
 }
 .searchInput:focus {
     outline: none;
@@ -24,6 +28,7 @@
     left: 8px;
     font-size: 20px;
     color: #888888;
+    pointer-events: none;
 }
 .clearText {
     appearance: none;
@@ -40,13 +45,13 @@
     cursor: pointer;
     top: 9px;
     font-size: 20px;
-    right: 8px;
+    right: 2px;
     padding-inline: 0;
     padding-block: 0;
     transition: .1s ease-in;
 }
 .clearText:hover {
-    background: #fff2;
+    background: #f00;
 }
 @media (prefers-color-scheme: light) {
     .clearText:hover {
