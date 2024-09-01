@@ -3,10 +3,10 @@ import HeaderRow from "./HeaderRow/HeaderRow.tsx";
 import SearchInput from "../SearchInput/SearchInput.tsx";
 import { useState } from "react";
 import { useDebounce } from "@uidotdev/usehooks";
-import UserTableBody from "./UserTableBody/UserTableBody.tsx";
 import { ISearchParams } from "../../types.ts";
 import { useGetUsersQuery } from "../../app/services/user.ts";
 import Spinner from "../Spinner/Spinner.tsx";
+import UserRow from "./UserRow/UserRow.tsx";
 
 export default function UserTable() {
   const [name, setName] = useState("");
@@ -70,7 +70,7 @@ export default function UserTable() {
             </tr>
           </thead>
           <tbody>
-            <UserTableBody users={data} />
+            {data && data.map((x) => <UserRow user={x} />)}
             {!data && (
               <tr className={styles.loading}>
                 <td colSpan={4}>
