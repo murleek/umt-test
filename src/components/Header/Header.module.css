@@ -3,6 +3,6 @@
     margin: 0 auto;
     padding: 72px 1rem 24px;
 }
-.title {
+.headerWrapper .title {
     font-size: clamp(1.5rem, 0.0882rem + 7.0588vw, 3rem);
 }

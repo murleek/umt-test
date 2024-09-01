@@ -1,0 +1,23 @@
+.row {
+    background: #3A3A3C;
+    transition: .1s ease-in;
+}
+.row td {
+    padding: 0;
+    word-break: break-all;
+}
+.row td {
+    padding: 16px 8px;
+}
+.row:hover  {
+    background: #48484A;
+}
+
+@media (prefers-color-scheme: light) {
+    .row {
+        background: #FFF;
+    }
+    .row:hover {
+        background: #F2F2F7;
+    }
+}
