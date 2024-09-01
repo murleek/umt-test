@@ -27,3 +27,10 @@ export interface AddressGeo {
   lat: string;
   lng: string;
 }
+
+export interface ISearchParams {
+  name: string;
+  username: string;
+  email: string;
+  phone: string;
+}

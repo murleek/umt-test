@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { User } from "../../types";
+import { ISearchParams, User } from "../../types";
 
 export const userApi = createApi({
   reducerPath: "userApi",
@@ -7,8 +7,14 @@ export const userApi = createApi({
     baseUrl: import.meta.env.VITE_API_ENDPOINT,
   }),
   endpoints: (builder) => ({
-    getUsers: builder.query<User[], void>({
-      query: () => `users`,
+    getUsers: builder.query<User[], ISearchParams>({
+      query: (search) => {
+        const searchObject = Object.fromEntries(
+          Object.entries(search).filter(([_, v]) => !!v),
+        );
+        console.log(search, new URLSearchParams(searchObject).toString());
+        return `users?${new URLSearchParams(searchObject).toString()}`;
+      },
     }),
   }),
 });
