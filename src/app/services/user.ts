@@ -12,7 +12,6 @@ export const userApi = createApi({
         const searchObject = Object.fromEntries(
           Object.entries(search).filter(([_, v]) => !!v),
         );
-        console.log(search, new URLSearchParams(searchObject).toString());
         return `users?${new URLSearchParams(searchObject).toString()}`;
       },
     }),
